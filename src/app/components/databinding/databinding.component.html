@@ -1,0 +1,55 @@
+<h3 class="text-center">Let's Learn Data Binding</h3>
+<hr />
+
+<div class="border p-2 m-2">
+    <div>Name is: {{name}}</div>
+    <div>Name is: <span [innerHTML]="name"></span></div>
+    <div>Name is: <span bind-innerHTML="name"></span></div>
+
+    <img src="{{img_url}}" alt="" width="250" height="300">
+    <img [src]="img_url" alt="" width="250" height="300" class="mx-2">
+    <img bind-src="img_url" alt="" width="250" height="300">
+
+    <div class="my-2">
+        1 way : <input value="{{name}}" />
+        1 way : <input [value]="name" class="mx-2" />
+        1 way : <input bind-value="name" />
+
+        <div class="mt-1">
+            2 way : <input [(ngModel)]="name" class="mx-2" />
+            2 way : <input bindon-ngModel="name" />
+        </div>
+    </div>
+
+    <button class="btn btn-primary" disabled="{{flag}}">Click Me</button>
+    <button class="btn btn-primary mx-2" [disabled]="flag">Click Me</button>
+    <button class="btn btn-primary" bind-disabled="flag">Click Me</button>
+
+    <button class="btn btn-success mx-2" (click)="f1()">click to invoke f1</button>
+    <button class="btn btn-success mx-2" on-click="f1()">click to invoke f1</button>
+</div>
+
+<div class="border p-2 m-2">
+    <div>Assignment-1 Show/Hide the paragraph</div>
+    <h2 [hidden]="flag">Hellooooo!!!!! , Good Morning</h2>
+    <button class="btn btn-primary" (click)="flag=!flag">{{ flag ? 'SHOW' : 'HIDE'}}</button>
+</div>
+
+<div class="border p-2 m-2">
+    <div>Assignment-2 (Remaining Character)</div>
+    <textarea maxlength="100" [(ngModel)]="msg"></textarea>
+    <div>Message: {{msg}}</div>
+    <div>Remaining Chars: {{100 - msg.length}}</div>
+</div>
+
+<div class="border p-2 m-2">
+    <div>Assignment-3 (State Dropdown)</div>
+    <select [(ngModel)]="selectedState">
+        <option>Karnataka</option>
+        <option>Odisha</option>
+        <option>Bihar</option>
+        <option>Kerala</option>
+        <option>Tamilnadu</option>
+    </select>
+    <div>Selected State : {{selectedState}}</div>
+</div>
