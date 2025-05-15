@@ -1,8 +1,14 @@
+<style>
+    input {
+        border-radius: 5px;
+    }
+</style>
+
 <h3 class="text-center">Let's Learn Data Binding</h3>
 <hr />
 
 <div class="border p-2 m-2">
-    <div>Name is: {{name}}</div>
+    <div style="color:red">Name is: {{name}}</div>
     <div>Name is: <span [innerHTML]="name"></span></div>
     <div>Name is: <span bind-innerHTML="name"></span></div>
 
@@ -26,7 +32,45 @@
     <button class="btn btn-primary" bind-disabled="flag">Click Me</button>
 
     <button class="btn btn-success mx-2" (click)="f1()">click to invoke f1</button>
-    <button class="btn btn-success mx-2" on-click="f1()">click to invoke f1</button>
+    <button class="btn btn-pink mx-2" on-click="f1()">click to invoke f1</button>
+
+    <div class="border p-2 m-2">
+        <div>Attribute Binding</div>
+        <table class="table table-bordered">
+            <tbody>
+                <tr>
+                    <!-- <th [colSpan]="colspanValue">Name</th> -->
+                    <th [attr.colspan]="colspanValue">Name</th>
+                    <th>Age</th>
+                </tr>
+                <tr>
+                    <td>Jill</td>
+                    <td>Smith</td>
+                    <td>43</td>
+                </tr>
+                <tr>
+                    <td>Eve</td>
+                    <td>Jackson</td>
+                    <td>57</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="border p-2 m-2">
+        <div>Addition using 2-way binding</div>
+        <input type="number" [(ngModel)]="num1" />
+        <input type="number" [(ngModel)]="num2" class="mx-2" />
+        <div>Addition of {{num1}} and {{num2}} is {{num1+num2}}</div>
+    </div>
+
+    <div class="border p-2 m-2">
+        <div>Addition using Template reference variable</div>
+        <input type="number" #num3 />
+        <input type="number" ref-num4 class="mx-2" />
+        <button (click)="addition(num3.value,num4.value)">Add</button>
+        <div>Addition of {{num3.value}} and {{num4.value}} is {{addResult}}</div>
+    </div>
 </div>
 
 <div class="border p-2 m-2">

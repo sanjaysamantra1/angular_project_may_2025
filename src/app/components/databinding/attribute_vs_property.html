@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="inputbox1" value="sachin" />
+    <button onclick="getValuefrominputBox()">Click me</button>
+
+    <script>
+        function getValuefrominputBox() {
+            console.log(document.getElementById('inputbox1').value); // property
+            console.log(document.getElementById('inputbox1').getAttribute('value')); // atrribute
+        }
+    </script>
+</body>
+
+</html>
