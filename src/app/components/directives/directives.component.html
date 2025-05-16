@@ -1,0 +1,83 @@
+<h3 class="text-center">Let's Learn Directives</h3>
+<hr />
+
+<div class="p-2 m-2 border">
+  <div>
+    Enter a Number To check if it is even/Odd
+    <input type="number" [(ngModel)]="num">
+  </div>
+  <h4>if and else Before Angular-17</h4>
+  <div *ngIf="num%2==0">{{num}} is Even</div>
+  <div *ngIf="num%2!==0">{{num}} is Odd</div>
+
+  <h4>if and else After Angular-17</h4>
+  @if(num%2==0){
+  <div>{{num}} is Even</div>
+  } @else{
+  <div>{{num}} is Odd</div>
+  }
+</div>
+
+<div class="p-2 m-2 border">
+  <h4>if Vs hidden</h4>
+  @if(num%2==0){
+  <div>{{num}} is Even</div>
+  } @else{
+  <div>{{num}} is Odd From Else Block</div>
+  }
+
+  <div [hidden]="num%2!==0">{{num}} is Even</div>
+  <div [hidden]="num%2==0">{{num}} is Odd From Hidden</div>
+</div>
+
+<div class="p-2 m-2 border">
+  <h4>Switch case</h4>
+  <div>
+    Enter a number between 1-7:
+    <input type="number" [(ngModel)]="dayNum">
+    @switch (dayNum) {
+    @case (1) { <h4>Monday</h4> }
+    @case (2) { <h4>Tuesday</h4> }
+    @case (3) { <h4>Wednesday</h4> }
+    @case (4) { <h4>Thursday</h4> }
+    @case (5) { <h4>Friday</h4> }
+    @case (6) { <h4>Saturday</h4> }
+    @case (7) { <h4>Sunday</h4> }
+    @default { <h4>Not a Valid number</h4> }
+    }
+  </div>
+</div>
+
+<div class="p-2 m-2 border">
+  <h4>For Loop</h4>
+
+  <div>Use for loop to display statenames in a dropdown</div>
+  <select>
+    @for(state of stateNames;track $index){
+    <option>{{state}}</option>
+    }
+  </select>
+
+  <div>Use for loop to display statenames in a datalist</div>
+  <input list="countries">
+  <datalist id="countries">
+    @for(country of country_list;track $index){
+      <option>{{country}}</option>
+    }
+  </datalist>
+
+  <div>Use for loop to display Data in table</div>
+  <table class="table table-bordered table-striped">
+    <tbody>
+      @for(emp of employees;track $index){
+        <tr>
+          <td>{{$index + 1}}</td>
+          <td>{{emp.eId}}</td>
+          <td>{{emp.name}}</td>
+          <td>{{emp.gender}}</td>
+          <td>{{emp.sal}}</td>
+        </tr>
+      }
+    </tbody>
+  </table>
+</div>
