@@ -1,0 +1,39 @@
+<h3 class="text-center">User List</h3>
+<hr>
+<button class="btn btn-primary" (click)="flag=!flag">Table/Card View</button>
+
+@if(flag){
+<table class="table table-bordered table-striped">
+  <tbody>
+    @for(user of user_list;track $index){
+    <tr>
+      <td>{{user.name}}</td>
+      <td>{{user.username}}</td>
+      <td>{{user.email}}</td>
+      <td>{{user.address.city}}</td>
+      <td>{{user.phone}}</td>
+    </tr>
+    }
+  </tbody>
+</table>
+}@else {
+<div class="container">
+  <div class="row">
+    @for(user of user_list;track $index){
+    <div class="col-sm-3">
+      <div class="card text-center">
+        <img src="https://toppng.com/uploads/preview/icons-logos-emojis-user-icon-png-transparent-11563566676e32kbvynug.png" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{user.name}}</h5>
+          <p class="card-text">{{user.username}}</p>
+          <p class="card-text">{{user.email}}</p>
+          <p class="card-text">{{user.address.city}}</p>
+          <p class="card-text">{{user.phone}}</p>
+          <a href="#" class="btn btn-primary">Details</a>
+        </div>
+      </div>
+    </div>
+    }
+  </div>
+</div>
+}

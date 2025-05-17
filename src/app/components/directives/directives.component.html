@@ -68,6 +68,19 @@
 
   <div>Use for loop to display Data in table</div>
   <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th>Index</th>
+        <th>eId</th>
+        <th>Name</th>
+        <th>Gender</th>
+        <th>Salary</th>
+        <th>is First?</th>
+        <th>is Last?</th>
+        <th>is Even?</th>
+        <th>is Odd?</th>
+      </tr>
+    </thead>
     <tbody>
       @for(emp of employees;track $index){
         <tr>
@@ -76,6 +89,10 @@
           <td>{{emp.name}}</td>
           <td>{{emp.gender}}</td>
           <td>{{emp.sal}}</td>
+          <td>{{$first}}</td>
+          <td>{{$last}}</td>
+          <td>{{$even}}</td>
+          <td>{{$odd}}</td>
         </tr>
       }
     </tbody>
