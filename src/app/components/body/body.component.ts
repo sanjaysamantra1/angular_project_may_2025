@@ -7,8 +7,8 @@ import { UsersComponent } from '../users/users.component';
   selector: 'app-body',
   imports: [
     // DatabindingComponent,
-    // DirectivesComponent
-    UsersComponent
+    DirectivesComponent
+    // UsersComponent
   ],
   templateUrl: './body.component.html',
   styleUrl: './body.component.css',

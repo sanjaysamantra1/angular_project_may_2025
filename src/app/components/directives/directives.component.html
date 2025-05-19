@@ -62,7 +62,7 @@
   <input list="countries">
   <datalist id="countries">
     @for(country of country_list;track $index){
-      <option>{{country}}</option>
+    <option>{{country}}</option>
     }
   </datalist>
 
@@ -83,18 +83,39 @@
     </thead>
     <tbody>
       @for(emp of employees;track $index){
-        <tr>
-          <td>{{$index + 1}}</td>
-          <td>{{emp.eId}}</td>
-          <td>{{emp.name}}</td>
-          <td>{{emp.gender}}</td>
-          <td>{{emp.sal}}</td>
-          <td>{{$first}}</td>
-          <td>{{$last}}</td>
-          <td>{{$even}}</td>
-          <td>{{$odd}}</td>
-        </tr>
+      <tr>
+        <td>{{$index + 1}}</td>
+        <td>{{emp.eId}}</td>
+        <td>{{emp.name}}</td>
+        <td>{{emp.gender}}</td>
+        <td>{{emp.sal}}</td>
+        <td>{{$first}}</td>
+        <td>{{$last}}</td>
+        <td>{{$even}}</td>
+        <td>{{$odd}}</td>
+      </tr>
       }
     </tbody>
   </table>
+</div>
+
+<div class="border p-2 m-2">
+  <div>ngStyle is used to apply some style conditionally</div>
+
+  <p [style.color]="num % 2 == 0 ? 'blue' : 'red'"> {{num}} is {{num % 2 == 0 ? 'Even' : 'Odd'}} </p>
+  <p [style.fontSize.px]="num % 2 == 0 ? 48 : 16"> Add style with unit </p>
+  <p [style.background-color]=" num % 2 == 0?'green':'blue' "> Add style conditionally </p>
+  <p [ngStyle]=" num % 2 == 0 ? myStyle1 : myStyle2"> NgStyle for multiple values </p>
+  <p [ngStyle]="myStyles()"> NgStyle for multiple values </p>
+</div>
+
+<div class="border p-2 m-2">
+  <div>ngClass is used to apply css classes conditionally</div>
+  <button class="btn btn-primary" (click)="flag=!flag">Change Flag- {{flag}}</button>
+
+  <p [class.myClass]='flag'> Add a class to an element </p>
+  <p [ngClass]="myClasses"> Add Multiple classes to an element </p>
+  <button class="btn" [ngClass]="flag ? 'btn-success' : 'btn-danger'">
+    Class Binding example
+  </button>
 </div>
