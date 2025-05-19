@@ -2,6 +2,7 @@
 /* To learn more about Angular compiler options: https://angular.dev/reference/configs/angular-compiler-options. */
 {
   "compileOnSave": false,
+  "resolveJsonModule": true,
   "compilerOptions": {
     "outDir": "./dist/out-tsc",
     "strict": true,

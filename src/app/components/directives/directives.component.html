@@ -119,3 +119,25 @@
     Class Binding example
   </button>
 </div>
+
+
+<div class="border p-2 m-2">
+  <div>ng template</div>
+  <div *ngIf="flag; else elseBlock">
+    Flag value is true
+  </div>
+  <ng-template #elseBlock>
+    Flag value is false
+  </ng-template>
+
+  <!-- <ng-container *ngFor="let item of items;">
+    <div *ngIf="flag">
+      Flag value is true
+    </div>
+  </ng-container> -->
+</div>
+
+<div class="border p-2 m-2">
+  <div>example of ng-content</div>
+  <ng-content></ng-content>
+</div>
