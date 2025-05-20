@@ -4,6 +4,7 @@ import { DirectivesComponent } from '../directives/directives.component';
 import { UsersComponent } from '../users/users.component';
 import { MyModalComponent } from '../my-modal/my-modal.component';
 import { ProductsComponent } from '../products/products.component';
+import { Demo1Component } from '../demo1/demo1.component';
 
 @Component({
   selector: 'app-body',
@@ -12,7 +13,8 @@ import { ProductsComponent } from '../products/products.component';
     // DirectivesComponent
     // UsersComponent
     // MyModalComponent
-    ProductsComponent
+    // ProductsComponent
+    Demo1Component
   ],
   templateUrl: './body.component.html',
   styleUrl: './body.component.css',
