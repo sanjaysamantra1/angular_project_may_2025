@@ -2,12 +2,14 @@ import { Component } from '@angular/core';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { FormsModule } from '@angular/forms';
 import productData from './product_data';
+import { ZoomoutDirective } from '../../custom_directives/zoomout.directive';
 
 @Component({
   selector: 'app-products',
   imports: [
     NgxPaginationModule,
-    FormsModule
+    FormsModule,
+    ZoomoutDirective
   ],
   templateUrl: './products.component.html',
   styleUrl: './products.component.css'

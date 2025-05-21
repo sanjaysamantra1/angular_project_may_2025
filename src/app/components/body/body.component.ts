@@ -14,9 +14,9 @@ import { EmployeeCrudComponent } from '../employee-crud/employee-crud.component'
     // DirectivesComponent
     // UsersComponent
     // MyModalComponent
-    // ProductsComponent
+    ProductsComponent
     // Demo1Component
-    EmployeeCrudComponent
+    // EmployeeCrudComponent
   ],
   templateUrl: './body.component.html',
   styleUrl: './body.component.css',
