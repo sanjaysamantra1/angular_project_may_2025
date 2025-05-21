@@ -1,0 +1,57 @@
+<h3 class="text-center">Employee CRUD</h3>
+<hr />
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-8">
+      <table class="table table-bordered table-striped">
+        <tbody>
+          @for(emp of employees;track $index){
+          <tr>
+            <td>{{emp.id}}</td>
+            <td>{{emp.name}}</td>
+            <td>{{emp.gender}}</td>
+            <td>{{emp.sal}}</td>
+            <td>
+              <fa-icon [icon]="faEye" class="mx-4" (click)="setSelectedEmployee(emp)" data-bs-toggle="modal"
+                data-bs-target="#exampleModal"></fa-icon>
+              <fa-icon [icon]="faTrash" (click)="deleteEmployee($index)"></fa-icon>
+            </td>
+          </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+    <div class="col-sm-4">
+      <div class="border p-4">
+        <p>Eid: <input [(ngModel)]="empObj.id" /> </p>
+        <p>Name: <input [(ngModel)]="empObj.name" /></p>
+        <p>Gender: <input [(ngModel)]="empObj.gender" /></p>
+        <p>Salary: <input [(ngModel)]="empObj.sal" /></p>
+        <button class="btn btn-primary" (click)="addEmployee()">Add Emp</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">
+          Employee Details
+        </h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div>Eid: {{selectedEmployee?.id}}</div>
+        <div>Name: {{selectedEmployee?.name}}</div>
+        <div>Gender: {{selectedEmployee?.gender}}</div>
+        <div>Salary: {{selectedEmployee?.sal}}</div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

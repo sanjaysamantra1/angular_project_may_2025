@@ -9,8 +9,8 @@ import { FooterComponent } from './components/footer/footer.component';
   selector: 'app-root',
   imports: [
     NavbarComponent,
-    CategoriesComponent,
-    CarouselComponent,
+    // CategoriesComponent,
+    // CarouselComponent,
     BodyComponent,
     FooterComponent
   ],
