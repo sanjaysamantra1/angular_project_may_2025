@@ -1,0 +1,93 @@
+<h3 class="text-center">Let's Learn Pipes</h3>
+
+<div class="border border-5 p-2 m-2 rounded-2">
+  <h4>lowercase, uppercase, titlecase pipe:</h4>
+  <div>userName: {{userName}}</div>
+  <div>userName: {{userName | lowercase}}</div>
+  <div>userName: {{userName | uppercase}}</div>
+  <div>userName: {{userName | titlecase}}</div>
+</div>
+
+<div class="border border-5 p-2 m-2 rounded-2">
+  <h4>currency pipe:</h4>
+  <div>salary: {{salary}}</div>
+  <div>salary: {{salary | currency}}</div>
+  <div>salary: {{salary | currency : 'INR'}}</div>
+  <!-- input | pipeName : argument-->
+  <div>salary: {{salary | currency : 'USD'}}</div>
+  <div>salary: {{salary | currency : 'USD':'code'}}</div>
+  <div>salary: {{salary | currency : '&euro;'}}</div>
+  <div>salary: {{salary | currency : '&#20803;'}}</div>
+</div>
+
+<div class="border border-5 p-2 m-2 rounded-2">
+  <h4>Date pipe:</h4>
+  <div>{{today}}</div>
+  <div>{{today | date}}</div>
+  <div>{{today | date : 'shortDate'}}</div>
+  <div>{{today | date : 'mediumDate'}}</div>
+  <div>{{today | date : 'longDate'}}</div>
+  <div>{{today | date : 'fullDate'}}</div>
+  <div>{{today | date : 'shortTime'}}</div>
+  <div>{{today | date : 'mediumTime'}}</div>
+  <div>{{today | date : 'longTime'}}</div>
+  <div>{{today | date : 'fullTime'}}</div>
+  <div>{{today | date : 'dd/MMM/yyyy'}}</div>
+  <div>{{today | date : 'MMM : dd : yyyy'}}</div>
+  <div>{{today | date : 'HH:mm' }}</div>
+</div>
+
+<div class="border border-5 p-2 m-2 rounded-2">
+  <h4>Pipe Chaining:</h4>
+  <div>{{today | date | lowercase}}</div>
+  <div>{{today | date | uppercase}}</div>
+</div>
+
+<div class="border border-5 p-2 m-2 rounded-2">
+  <h4>number & percent pipe:</h4>
+  <div>{{12.111222333 | number: "3.2-5"}}</div>
+  <div>{{12.111228333 | number: "3.2-5"}}</div>
+  <div>{{ 12.1 | number: "3.2-5" }}</div>
+  <div>{{0.5 | number:'3.2-5'}}</div>
+
+  <div>{{ 0.5 | percent}}</div>
+  <div>{{ 0.05 | percent}}</div>
+</div>
+
+<div class="border border-5 p-2 m-2 rounded-2">
+  <h4>json pipe:</h4>
+  <div>{{user}}</div>
+  <div>{{user | json}}</div>
+</div>
+
+<div class="border border-5 p-2 m-2 rounded-2">
+  <h4>keyvalue pipe:</h4>
+
+  @for(entry of user | keyvalue;track $index){
+  <div>{{entry.key}}---{{entry.value}}</div>
+  }
+</div>
+
+<div class="border border-5 p-2 m-2 rounded-2">
+  <h4>slice pipe:</h4>
+  <div>{{userName | slice : 2}}</div>
+  <div>{{userName | slice : 2 : 5}}</div>
+  <div>{{userName | slice : 2 : -1}}</div>
+</div>
+
+<div class="border border-5 p-2 m-2 rounded-2">
+  <h4>Remaining Char (Custom Pipe)</h4>
+
+  <textarea [(ngModel)]="msg" maxlength="100"></textarea>
+  <div>Remaining Char: {{msg | remaining}}</div>
+
+  <textarea [(ngModel)]="msg2" maxlength="200"></textarea>
+  <div>Remaining Char: {{msg2 | remaining : 200}}</div>
+</div>
+
+<div class="border border-5 p-2 m-2 rounded-2">
+  <h4>Ordinal (Custom Pipe)</h4>
+  <input type="number" [(ngModel)]="cardinalNum" />
+  <div>Cardinal : {{cardinalNum}} </div>
+  <div>Ordinal : {{cardinalNum | ordinal}} </div>
+</div>

@@ -6,6 +6,7 @@ import { MyModalComponent } from '../my-modal/my-modal.component';
 import { ProductsComponent } from '../products/products.component';
 import { Demo1Component } from '../demo1/demo1.component';
 import { EmployeeCrudComponent } from '../employee-crud/employee-crud.component';
+import { PipesComponent } from '../pipes/pipes.component';
 
 @Component({
   selector: 'app-body',
@@ -14,9 +15,10 @@ import { EmployeeCrudComponent } from '../employee-crud/employee-crud.component'
     // DirectivesComponent
     // UsersComponent
     // MyModalComponent
-    ProductsComponent
+    // ProductsComponent
     // Demo1Component
     // EmployeeCrudComponent
+    PipesComponent
   ],
   templateUrl: './body.component.html',
   styleUrl: './body.component.css',
