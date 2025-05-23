@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RemainingPipe } from '../../pipes/remaining.pipe';
 import { OrdinalPipe } from '../../pipes/ordinal.pipe';
+import { MySortPipe } from '../../pipes/my-sort.pipe';
 
 @Component({
   selector: 'app-pipes',
@@ -10,7 +11,8 @@ import { OrdinalPipe } from '../../pipes/ordinal.pipe';
     CommonModule,
     FormsModule,
     RemainingPipe,
-    OrdinalPipe
+    OrdinalPipe,
+    MySortPipe
   ],
   templateUrl: './pipes.component.html',
   styleUrl: './pipes.component.css'
@@ -25,4 +27,7 @@ export class PipesComponent {
   msg2: string = 'Hii';
 
   cardinalNum : number = 21;
+
+  arr1 = [10,50,30,40,20];
+  arr2 = [10,50,30,40,20];
 }

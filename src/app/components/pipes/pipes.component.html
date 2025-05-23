@@ -2,6 +2,7 @@
 
 <div class="border border-5 p-2 m-2 rounded-2">
   <h4>lowercase, uppercase, titlecase pipe:</h4>
+  <input [(ngModel)]="userName" />
   <div>userName: {{userName}}</div>
   <div>userName: {{userName | lowercase}}</div>
   <div>userName: {{userName | uppercase}}</div>
@@ -10,6 +11,7 @@
 
 <div class="border border-5 p-2 m-2 rounded-2">
   <h4>currency pipe:</h4>
+  <input [(ngModel)]="salary" type="number" />
   <div>salary: {{salary}}</div>
   <div>salary: {{salary | currency}}</div>
   <div>salary: {{salary | currency : 'INR'}}</div>
@@ -90,4 +92,22 @@
   <input type="number" [(ngModel)]="cardinalNum" />
   <div>Cardinal : {{cardinalNum}} </div>
   <div>Ordinal : {{cardinalNum | ordinal}} </div>
+</div>
+
+<div class="border border-5 p-2 m-2 rounded-2">
+  <h4>arr1 values without sort</h4>
+  @for (item of arr1; track $index) {
+    <b>{{item}} &nbsp;</b>
+  }
+</div>
+
+<div class="border border-5 p-2 m-2 rounded-2">
+  <h4>arr2 values with sort</h4>
+  @for (item of arr2 | mySort; track $index) {
+    <b>{{item}} &nbsp;</b>
+  }
+  <div>
+    <input #newVal />
+    <button class="btn btn-primary mx-2" (click)="arr2.push(+newVal.value)">Add</button>
+  </div>
 </div>
