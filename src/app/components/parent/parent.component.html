@@ -1,12 +1,16 @@
 <div class="border border-5 rounded rounded-2 p-2 m-2 container text-center">
   <h4>This is Parent Component</h4>
-  <div>My own data a is: {{a}}</div>
+  <div>My own data a is: {{a}} , b is {{b}}</div>
+  <div>
+    <input type="number" [(ngModel)]="a" />
+    <input type="number" [(ngModel)]="b" />
+  </div>
   <div>My child's data userName is: {{child1.userName}}</div>
   <div>My child's data address is: {{address_parent}}</div>
 
   <div class="row">
     <div class="col-sm-6">
-      <app-child1 [a]="a" #child1></app-child1>
+      <app-child1 [a]="a" [b]="b" #child1></app-child1>
     </div>
     <div class="col-sm-6">
       <app-child2 [child2_a]="a"
