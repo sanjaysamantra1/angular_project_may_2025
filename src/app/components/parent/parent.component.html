@@ -2,8 +2,8 @@
   <h4>This is Parent Component</h4>
   <div>My own data a is: {{a}} , b is {{b}}</div>
   <div>
-    <input type="number" [(ngModel)]="a" />
-    <input type="number" [(ngModel)]="b" />
+    <input type="number" [(ngModel)]="a" #myBox1 />
+    <input type="number" [(ngModel)]="b" #myBox2 />
   </div>
   <div>My child's data userName is: {{child1.userName}}</div>
   <div>My child's data address is: {{address_parent}}</div>

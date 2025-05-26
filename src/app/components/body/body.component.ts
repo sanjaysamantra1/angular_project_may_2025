@@ -8,6 +8,7 @@ import { Demo1Component } from '../demo1/demo1.component';
 import { EmployeeCrudComponent } from '../employee-crud/employee-crud.component';
 import { PipesComponent } from '../pipes/pipes.component';
 import { ParentComponent } from '../parent/parent.component';
+import { Demo2Component } from '../demo2/demo2.component';
 
 @Component({
   selector: 'app-body',
@@ -17,15 +18,16 @@ import { ParentComponent } from '../parent/parent.component';
     // UsersComponent
     // MyModalComponent
     // ProductsComponent
-    // Demo1Component
+    // Demo1Component,
+    // Demo2Component
     // EmployeeCrudComponent
     // PipesComponent
-    ParentComponent
+    // ParentComponent
   ],
   templateUrl: './body.component.html',
   styleUrl: './body.component.css',
   // encapsulation: ViewEncapsulation.ShadowDom
 })
 export class BodyComponent {
-
+  flag: boolean = true;
 }

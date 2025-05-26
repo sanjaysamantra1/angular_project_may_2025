@@ -1,4 +1,4 @@
-import { Component, DoCheck, OnChanges, OnInit } from '@angular/core';
+import { Component, DoCheck, OnChanges, OnInit, ViewChild } from '@angular/core';
 import { Child1Component } from '../child1/child1.component';
 import { Child2Component } from '../child2/child2.component';
 import { FormsModule } from '@angular/forms';
@@ -13,9 +13,12 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './parent.component.html',
   styleUrl: './parent.component.css'
 })
-export class ParentComponent  {
+export class ParentComponent {
   a: number;
   b: number;
+
+  @ViewChild('myBox1') myInptBox1: any;
+  @ViewChild('myBox2') myInptBox2: any;
 
   address_parent: string = '';
   receiveDataFromChild(addressFromChild: string) {
@@ -25,7 +28,9 @@ export class ParentComponent  {
   constructor() {
     this.a = 100;
     this.b = 200;
-    console.log("Parent constructor")
+    console.log("Parent constructor");
+    console.log(this.myInptBox1);
+    // this.myInptBox2.nativeElement.style.backgroundColor = 'cyan';
   }
   // ngOnChanges() {
   //   console.log('Parent ngOnChanges');
@@ -33,18 +38,21 @@ export class ParentComponent  {
   // ngOnInit() {
   //   console.log('Parent ngOnInit');
   // }
-  // ngDoCheck() {
-  //   console.log('Parent ngDoCheck');
-  // }
+  ngDoCheck() {
+    console.log('Parent ngDoCheck');
+  }
   // ngAfterContentInit() {
   //   console.log('Parent ngAfterContentInit');
   // }
   // ngAfterContentChecked() {
   //   console.log('Parent ngAfterContentChecked')
   // }
-  // ngAfterViewInit() {
-  //   console.log('Parent ngAfterViewInit');
-  // }
+  ngAfterViewInit() {
+    console.log('Parent ngAfterViewInit');
+    console.log(this.myInptBox1);
+    this.myInptBox1.nativeElement.focus();
+    this.myInptBox2.nativeElement.style.backgroundColor = 'cyan';
+  }
   // ngAfterViewChecked() {
   //   console.log('Parent ngAfterViewChecked');
   // }
