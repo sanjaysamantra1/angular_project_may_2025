@@ -1,0 +1,27 @@
+<h3 class="text-center">Product List</h3>
+<hr />
+
+<div class="container">
+  <div class="row mt-3">
+    @if(isLoading){
+      <h1>Loading...</h1>
+    }@else {
+    @for(product of products;track $index){
+    <div class="col-sm-3">
+      <div class="card">
+        <img src="{{product.image}}" class="card-img-top" alt="..." height="200">
+        <div class="card-body text-center" appZoomout>
+          <h5 class="card-title">{{product.category}}</h5>
+          <p class="card-text">{{product.id}}</p>
+          <p class="card-text">{{product.title}}</p>
+          <p class="card-text text-truncate">{{product.description}}</p>
+          <p class="card-text">{{product.price}}</p>
+          <p class="card-text">{{product.rating.rate}}</p>
+          <button class="btn btn-primary">Details</button>
+        </div>
+      </div>
+    </div>
+    }
+  }
+  </div>
+</div>
