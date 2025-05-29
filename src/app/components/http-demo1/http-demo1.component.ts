@@ -15,12 +15,26 @@ export class HttpDemo1Component {
   }
   ngOnInit() {
     this.fetchEmployees();
+    this.fetchUsers();
+    this.fetchComments();
   }
 
   fetchEmployees() {
     this.httpClient.get('http://localhost:3000/employees').subscribe(response => {
       console.log(response);
       this.employees = response;
+    })
+  }
+
+  fetchUsers() {
+    this.httpClient.get('https://jsonplaceholder.typicode.com/users').subscribe(response => {
+      console.log(response);
+    })
+  }
+
+  fetchComments() {
+    this.httpClient.get('https://jsonplaceholder.typicode.com/comments').subscribe(response => {
+      console.log(response);
     })
   }
 }

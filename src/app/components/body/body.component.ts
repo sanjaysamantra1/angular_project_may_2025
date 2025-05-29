@@ -30,9 +30,9 @@ import { EmployeeComponent } from '../employee/employee.component';
     // ParentComponent
     // Math1Component,
     // Math2Component
-    // HttpDemo1Component
-    // ProductListComponent
-    EmployeeComponent
+    HttpDemo1Component,
+    ProductListComponent
+    // EmployeeComponent
   ],
   templateUrl: './body.component.html',
   styleUrl: './body.component.css',
