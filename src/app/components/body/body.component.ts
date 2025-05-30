@@ -14,6 +14,7 @@ import { Math2Component } from '../math2/math2.component';
 import { HttpDemo1Component } from '../http-demo1/http-demo1.component';
 import { ProductListComponent } from '../product-list/product-list.component';
 import { EmployeeComponent } from '../employee/employee.component';
+import { ObservableDemo1Component } from '../observable-demo1/observable-demo1.component';
 
 @Component({
   selector: 'app-body',
@@ -30,9 +31,10 @@ import { EmployeeComponent } from '../employee/employee.component';
     // ParentComponent
     // Math1Component,
     // Math2Component
-    HttpDemo1Component,
-    ProductListComponent
+    // HttpDemo1Component,
+    // ProductListComponent
     // EmployeeComponent
+    ObservableDemo1Component
   ],
   templateUrl: './body.component.html',
   styleUrl: './body.component.css',
