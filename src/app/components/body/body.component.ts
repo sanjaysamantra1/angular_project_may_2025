@@ -15,6 +15,9 @@ import { HttpDemo1Component } from '../http-demo1/http-demo1.component';
 import { ProductListComponent } from '../product-list/product-list.component';
 import { EmployeeComponent } from '../employee/employee.component';
 import { ObservableDemo1Component } from '../observable-demo1/observable-demo1.component';
+import { FolderExplorerComponent } from '../folder-explorer/folder-explorer.component';
+import folderObj from './folder_data';
+import { ObservableDemo2Component } from '../observable-demo2/observable-demo2.component';
 
 @Component({
   selector: 'app-body',
@@ -34,7 +37,9 @@ import { ObservableDemo1Component } from '../observable-demo1/observable-demo1.c
     // HttpDemo1Component,
     // ProductListComponent
     // EmployeeComponent
-    ObservableDemo1Component
+    // ObservableDemo1Component,
+    // FolderExplorerComponent
+    ObservableDemo2Component
   ],
   templateUrl: './body.component.html',
   styleUrl: './body.component.css',
@@ -42,4 +47,5 @@ import { ObservableDemo1Component } from '../observable-demo1/observable-demo1.c
 })
 export class BodyComponent {
   flag: boolean = true;
+  folderObj: any = folderObj;
 }
