@@ -18,6 +18,7 @@ import { ObservableDemo1Component } from '../observable-demo1/observable-demo1.c
 import { FolderExplorerComponent } from '../folder-explorer/folder-explorer.component';
 import folderObj from './folder_data';
 import { ObservableDemo2Component } from '../observable-demo2/observable-demo2.component';
+import { SubjectDemo1Component } from '../subject-demo1/subject-demo1.component';
 
 @Component({
   selector: 'app-body',
@@ -35,11 +36,12 @@ import { ObservableDemo2Component } from '../observable-demo2/observable-demo2.c
     // Math1Component,
     // Math2Component
     // HttpDemo1Component,
-    // ProductListComponent
+    ProductListComponent,
     // EmployeeComponent
     // ObservableDemo1Component,
     // FolderExplorerComponent
-    ObservableDemo2Component
+    // ObservableDemo2Component
+    // SubjectDemo1Component
   ],
   templateUrl: './body.component.html',
   styleUrl: './body.component.css',
