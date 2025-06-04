@@ -1,0 +1,66 @@
+<h3 class="text-center">Template Driven Form</h3>
+<hr />
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4 offset-4 border border-5 rounded-2 p-2">
+      <form #userForm="ngForm" (submit)="submitUserForm(userForm)">
+        <div class="my-1">
+          <label for="name">Name:</label>
+          <input id="name" name="name" #name=ngModel [(ngModel)]="user.name" required minlength="5" />
+          <span *ngIf="name.hasError('required')" class="text-danger">Name is required</span>
+          <span *ngIf="name.hasError('minlength')" class="text-danger">Name Should have minimum 5 characters</span>
+        </div>
+        <div class="my-1">
+          <label for="email">Email:</label>
+          <input id="email" type="email" placeholder="Entetr Your Email..." name="email" #email=ngModel
+            [(ngModel)]="user.email" required />
+        </div>
+        <div class="my-1">
+          Gender:
+          <label for="male">Male</label>
+          <input type="radio" name="gender" id="male" value="male" ngModel [(ngModel)]="user.gender" />
+
+          <label for="female">Female</label>
+          <input type="radio" name="gender" id="female" value="female" ngModel [(ngModel)]="user.gender" />
+        </div>
+        <div class="my-1">
+          Sports:
+          <label for="cricket">Cricket</label>
+          <input type="checkbox" name="sports" id="cricket" value="cricket" ngModel [(ngModel)]="user.sports" />
+          <label for="hockey">hockey</label>
+          <input type="checkbox" name="sports" id="hockey" value="hockey" ngModel [(ngModel)]="user.sports" />
+          <label for="badminton">badminton</label>
+          <input type="checkbox" name="sports" id="badminton" value="badminton" ngModel [(ngModel)]="user.sports" />
+        </div>
+        <div ngModelGroup="address">
+          <div class="my-1">
+            <label for="street">Street:</label>
+            <input id="street" name="street" ngModel [(ngModel)]="user.address.street" />
+          </div>
+          <div class="my-1">
+            <label for="city">City:</label>
+            <input id="city" name="city" ngModel [(ngModel)]="user.address.city" />
+          </div>
+          <div class="my-1">
+            <label for="pincode">Pincode:</label>
+            <input id="pincode" name="pincode" ngModel [(ngModel)]="user.address.pincode" />
+          </div>
+        </div>
+        <div class="my-3">
+          <input type="reset" value="Reset" class="btn btn-danger mx-2" />
+          <input type="submit" value="Submit" [disabled]="userForm.invalid" class="btn btn-success" />
+        </div>
+      </form>
+      <div>Is Form Valid? {{userForm.valid}}</div>
+      <div>Is Name field Valid? {{name.valid}}</div>
+      <div>Is email field Valid? {{userForm.controls['email'].valid}}</div>
+      <pre>
+        {{userForm.value | json}}
+      </pre>
+      <pre>
+        {{user | json}}
+      </pre>
+    </div>
+  </div>
+</div>

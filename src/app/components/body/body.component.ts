@@ -20,6 +20,8 @@ import folderObj from './folder_data';
 import { ObservableDemo2Component } from '../observable-demo2/observable-demo2.component';
 import { SubjectDemo1Component } from '../subject-demo1/subject-demo1.component';
 import { SignalDemo1Component } from '../signal-demo1/signal-demo1.component';
+import { FormDemo1Component } from '../form-demo1/form-demo1.component';
+import { FormDemo2Component } from '../form-demo2/form-demo2.component';
 
 @Component({
   selector: 'app-body',
@@ -43,7 +45,9 @@ import { SignalDemo1Component } from '../signal-demo1/signal-demo1.component';
     // FolderExplorerComponent
     // ObservableDemo2Component
     // SubjectDemo1Component
-    SignalDemo1Component
+    // SignalDemo1Component
+    // FormDemo1Component
+    FormDemo2Component
   ],
   templateUrl: './body.component.html',
   styleUrl: './body.component.css',
