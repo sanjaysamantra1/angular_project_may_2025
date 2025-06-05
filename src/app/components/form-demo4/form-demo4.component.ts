@@ -12,10 +12,8 @@ import { FormGroup, FormBuilder, FormArray, ReactiveFormsModule } from '@angular
   styleUrl: './form-demo4.component.css'
 })
 export class FormDemo4Component {
-  empForm!: FormGroup;
-  constructor(private fb: FormBuilder) { }
-
-  ngOnInit() {
+  empForm: FormGroup;
+  constructor(private fb: FormBuilder) {
     this.empForm = this.fb.group({
       employees: this.fb.array([])
     });
@@ -46,7 +44,7 @@ export class FormDemo4Component {
   }
 
   newSkill(): FormGroup {
-    return this.fb.group({skill: '',exp: ''});
+    return this.fb.group({ skill: '', exp: '' });
   }
 
   addEmployeeSkill(empIndex: number) {
