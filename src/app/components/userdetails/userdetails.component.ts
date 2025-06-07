@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { switchMap } from 'rxjs';
 
 @Component({
   selector: 'app-userdetails',
@@ -15,12 +16,10 @@ export class UserdetailsComponent {
   }
 
   ngOnInit() {
-    this.activatedRoute.params.subscribe((response: any) => {
-      const id = response.id;
-      
-      this.http.get(`https://jsonplaceholder.typicode.com/users/${id}`).subscribe(userResponse => {
-        this.user = userResponse;
-      });
+    this.activatedRoute.params.pipe(switchMap((params: any) =>
+        this.http.get(`https://jsonplaceholder.typicode.com/users/${params.id}`)
+      )).subscribe((user: any) => {
+      this.user = user;
     });
   }
 }

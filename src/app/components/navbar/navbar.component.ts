@@ -21,4 +21,6 @@ export class NavbarComponent {
       this.cartItems = response;
     })
   }
+
+  userRole = 'student';
 }
