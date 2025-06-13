@@ -5,4 +5,10 @@
 <button class="btn btn-primary mx-3" routerLink="/home">Home</button>
 
 <button class="btn btn-primary mx-3" (click)="doSomethingAndGoToHome()">Do Something & Go To Home</button>
+<hr/>
 
+@defer {
+  <app-large />
+} @placeholder (minimum 500ms) {
+  <p>Large Component is Being Loaded...</p>
+}
