@@ -1,0 +1,1 @@
+import{Ma as o,eb as n,fb as m,wb as s}from"./chunk-CLSTOM47.js";var p=class t{static \u0275fac=function(e){return new(e||t)};static \u0275cmp=o({type:t,selectors:[["app-home"]],decls:2,vars:0,consts:[[1,"text-center"]],template:function(e,a){e&1&&(n(0,"h3",0),s(1,"This is Home Component"),m())},encapsulation:2})};export{p as a};
